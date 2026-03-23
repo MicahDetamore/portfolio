@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micah Detamore - Vegan Software Engineer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Simple EmailJS implementation without external library
+        const emailjs = {
+            _publicKey: 'hAgDXEiIyoIRckFGd',
+            init: function(publicKey) {
+                this._publicKey = publicKey;
+                console.log('EmailJS initialized with public key:', publicKey);
+            },
+            send: function(serviceId, templateId, templateParams) {
+                const url = 'https://api.emailjs.com/api/v1.0/email/send';
+                const data = {
+                    service_id: serviceId,
+                    template_id: templateId,
+                    user_id: this._publicKey,
+                    template_params: templateParams
+                };
+                
+                return fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+            }
+        };
+        console.log('EmailJS mock loaded');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home"><span class="highlight">Micah</span> Detamore</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Micah Detamore</span></h1>
+                <p class="hero-subtitle">Senior Software Engineer IV | Full-Stack Developer | Vegan</p>
+                <p class="hero-description">
+                    Dedicated and adaptable full-stack software engineer with over a decade of web development experience.
+                    Skilled in full SDLC, infrastructure migrations, security enhancements, and test-driven development.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/micah-detamore/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/GitItQuik" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:Micah.Detamore@gmail.com" target="_blank" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Over a decade of dedicated experience as a full-stack software engineer, recognized as a dependable problem-solver and go-to resource for critical production issues and on-time project delivery. Skilled in full software development life-cycle, infrastructure migrations, security enhancements, test-driven development, and global production deployments across US, EU, and APAC environments.
+                    </p>
+                    <p>
+                        Experience mentoring junior engineers and facilitating SCRUM ceremonies for multiple agile teams. Lead architect on business-critical infrastructure migrations and major product enhancements. Passionate about writing clean, maintainable code and strengthening application security.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>12+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100+</h3>
+                            <p>Major Features</p>
+                        </div>
+                        <div class="stat">
+                            <h3>3</h3>
+                            <p>Continents Deployed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img
+                        src="https://media.licdn.com/dms/image/v2/D5603AQHRoyZeEE1vNA/profile-displayphoto-scale_400_400/B56ZmBOA0_G4Ak-/0/1758809558817?e=1775088000&v=beta&t=6QHfHAPNna3eF5sUxVg2mcue1_6HyDhMOlw10D0mEeg"
+                        alt="Micah Detamore"
+                        class="about-profile-image"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Frameworks</h3>
+                    <ul>
+                        <li>Java (Spring Boot, JUnit, Gradle/Maven)</li>
+                        <li>JavaScript (React.js, Node.js, TypeScript, Jest)</li>
+                        <li>Python (Pandas, Flask)</li>
+                        <li>Groovy (Grails)</li>
+                        <li>Perl & PHP</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>SQL Server</li>
+                        <li>Oracle</li>
+                        <li>Redis</li>
+                        <li>Database Design & Optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Infrastructure</h3>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>Azure</li>
+                        <li>Nginx & Apache</li>
+                        <li>Infrastructure Migrations</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Methodologies</h3>
+                    <ul>
+                        <li>Git, GitLab, GitHub, TFS</li>
+                        <li>Agile/SCRUM</li>
+                        <li>Test-Driven Development</li>
+                        <li>Veracode Security Scanning</li>
+                        <li>Jira, Artifactory, Nexus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Senior Software Engineer IV</h3>
+                        <span class="company">MRI Software</span>
+                    </div>
+                    <p class="timeline-date">November 2014 - Present</p>
+                    <p class="timeline-description">
+                        Lead architect on business-critical infrastructure migrations (MariaDB → MySQL, Oracle → SQL Server). Implemented Okta SSO integration, cross-environment data import/export, and automated Veracode security scanning. Achieved significant performance enhancements across global production deployments (US, EU, APAC). Mentored junior engineers and interns, facilitated SCRUM ceremonies, and practiced test-driven development to expand unit, integration, and automated UI test suites. Designated team Security Champion.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Programmer</h3>
+                        <span class="company">ECS Tuning</span>
+                    </div>
+                    <p class="timeline-date">May 2012 - June 2013</p>
+                    <p class="timeline-description">
+                        Developed and modified web applications in Linux environments using Perl, PHP, MySQL, JavaScript, HTML and CSS. Converted existing PHP projects to Perl. Created administrative applications requiring major database modifications. Designed portal pages with employee-specific and feature-specific access permissions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Infrastructure Migration (MariaDB/Oracle → MySQL/SQL Server)</h3>
+                    <p>
+                        Led architect role in business-critical infrastructure migrations across global production deployments (US, EU, APAC). Successfully migrated from MariaDB to MySQL and Oracle to SQL Server, ensuring zero downtime and seamless data integrity. Achieved significant performance enhancements and improved cost efficiency.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">MySQL</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">Database Migration</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Okta SSO Integration & Security Automation</h3>
+                    <p>
+                        Designed and implemented enterprise Okta Single Sign-On (SSO) integration, streamlining authentication across multiple platforms. Established automated Veracode security scanning to identify and mitigate vulnerabilities in the deployment pipeline. Designated team Security Champion for ongoing threat assessment and compliance.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Okta</span>
+                        <span class="tag">Veracode</span>
+                        <span class="tag">Security</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Test-Driven Development Initiative & Mentorship</h3>
+                    <p>
+                        Spearheaded comprehensive test-driven development (TDD) initiative, significantly expanding unit, integration, and automated UI test suites. Mentored junior engineers and interns, fostering a culture of quality and best practices. Facilitated SCRUM ceremonies across multiple agile teams and established cross-environment data import/export systems for production deployments.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">TDD</span>
+                        <span class="tag">JUnit</span>
+                        <span class="tag">Agile Methodologies</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">
+                I'm always interested in hearing about new opportunities and projects.
+                Feel free to reach out!
+            </p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:Micah.Detamore@gmail.com">Micah.Detamore@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+13307053909">+1 (330) 705-3909</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Kettering, OH 45429</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/micah-detamore/" target="_blank">linkedin.com/in/micah-detamore</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Your Name" 
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Your Email" 
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="Subject" 
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Your Message" 
+                            rows="5" 
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/micah-detamore/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/GitItQuik" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

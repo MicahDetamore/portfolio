@@ -1,0 +1,20 @@
+# Logs
+logs/
+*.log
+
+# Cloudflared binary (large, platform-specific)
+cloudflared/cloudflared.exe
+
+# ngrok binary
+ngrok/
+
+# VS Code workspace settings (optional, uncomment to ignore)
+# .vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+Thumbs.db
+.DS_Store

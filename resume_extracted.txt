@@ -1,0 +1,57 @@
+Profile
+Dedicated and adaptable full-stack software engineer with over a decade of web
+development experience. Skilled in full SDLC, infrastructure migrations, security
+enhancements, test-driven development, and global production deployments. Experience
+in mentoring junior engineers and facilitating SCRUM ceremonies for multiple agile teams.
+Recognized as a dependable problem-solver and go-to resource for critical production
+issues and on-time project delivery.
+Professional Experience
+November 2014 – Present Solon, OH
+Micah Detamore Senior Software Engineer IV at MRI Software
+▪ Contributed to full development life-cycle on an Agile team, frequently facilitating
+Vegan Software Engineer
+SCRM ceremonies (retrospectives, sprint planning, grooming, stand-ups) and
+regularly performed production release preparation, builds, and deployments
+(330) 705-3909
+across US, EU, and APAC environments
+▪ Lead architect on business-critical infrastructure migrations (MariaDB → MySQL,
+Micah.Detamore@gmail.com Oracle → SQL Server) and major product enhancements (implementing Okta SSO,
+cross-environment data import/export, automating Veracode security scanning
+414 W David Rd and significant performance enhancements)
+Kettering, OH 45429
+▪ Trained and mentored Interns and junior level Software Engineers, facilitating
+smooth onboarding
+linkedin.com/in/micah-detamore
+▪ Designated as team Security Champion and led a project to automate Veracode
+Skills scans to strengthen application security
+▪ Practiced Test-Driven Development (TDD) and expanded unit, integration, and
+Languages & Frameworks
+automated UI test suites to ensure reliability and maintainability
+● Java (Spring Boot, Junit,
+Gradle/Maven) May 2012 – June 2013 Wadsworth, OH
+● Groovy (Grails)
+● JavaScript (React.js, Node.js, Programmer at ECS Tuning
+TypeScript, Jest)
+● Python (Pandas, Flask) ▪ Developed and modified web applications in a Linux environment using Perl,
+PHP, MySQL, JavaScript, HTML and CSS
+Databases ▪ Converted existing projects written in PHP to Perl
+● MySQL, SQL Server, Oracle, ▪ Wrote applications for employees to administer product details and customer
+Redis details, requiring major database modifications
+▪ Designed a portal page for employees to access both existing and self-written
+Cloud & Infrastructure
+admin pages, each having employee-specific and feature-specific access
+● Docker, Azure, Kubernetes, permissions
+Nginx, Apache
+Education
+DevOps
+May 2013 Kent, OH
+● Git, GitLab, GitHub, TFS,
+Artifactory, Nexus
+B.S. Computer Science at Kent State University
+Relevant Coursework:
+Tools & Methodologies
+● Agile/SCRUM, Jira, Veracode, ● Database Systems Design ● Secure Programming
+Keycloak, Liquibase ● Web Programming I and II ● Algorithms
+● Systems Programming ● Data Structures and Abstraction
+● Computer Networks ● Object Oriented Programming
+---PAGE BREAK---

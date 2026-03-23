@@ -1,0 +1,9 @@
+tunnel: portfolio
+credentials-file: C:\Users\micah\.cloudflared\bc324700-f191-45fc-8e1c-f00fc7e21303.json
+protocol: http2
+ingress:
+  - hostname: mdetamore.com
+    service: http://localhost:8000
+  - hostname: www.mdetamore.com
+    service: http://localhost:8000
+  - service: http_status:404
