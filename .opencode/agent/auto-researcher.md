@@ -1,0 +1,1 @@
+/home/quik/Obsidian/AgentWorkbench/agents/auto-researcher.md

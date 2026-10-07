@@ -1,7 +1,16 @@
 tunnel: portfolio
-credentials-file: C:\Users\micah\.cloudflared\bc324700-f191-45fc-8e1c-f00fc7e21303.json
+credentials-file: /home/quik/.cloudflared/bc324700-f191-45fc-8e1c-f00fc7e21303.json
 protocol: http2
 ingress:
+  - hostname: mdetamore.com
+    path: /Trading(/.*)?
+    service: http://localhost:5000
+  - hostname: mdetamore.com
+    path: /voting(/.*)?
+    service: http://localhost:5001
+  - hostname: mdetamore.com
+    path: /CMS(/.*)?
+    service: http://localhost:4000
   - hostname: mdetamore.com
     service: http://localhost:8000
   - hostname: www.mdetamore.com

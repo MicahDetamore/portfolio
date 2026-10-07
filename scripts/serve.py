@@ -12,7 +12,6 @@ mdetamore.com without ever needing to purge the Cloudflare cache:
    has never cached before and must fetch the latest file from origin.
 """
 import http.server
-import socketserver
 import os
 import re
 import time
@@ -20,9 +19,11 @@ import time
 PORT = 8000
 DIRECTORY = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Matches local (non-http) src/href values in <link> and <script> tags
+# Matches local (non-http) src/href values in <link> and <script> tags.
+# Uses a non-greedy path group then an optional query-string group so that
+# hrefs like 'favicon.svg?v=5' and plain 'style.css' are both captured.
 _ASSET_RE = re.compile(
-    r'((?:href|src)=")(?!https?://)([^"]+\.(?:css|js))(")',
+    r'((?:href|src)=")(?!https?://)([^"?]+?\.(?:css|js|svg|ico|png))(?:\?[^"]*)?(")',
     re.IGNORECASE,
 )
 
@@ -59,9 +60,7 @@ class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
 
         ts = str(int(time.time()))
         def add_version(m):
-            url = m.group(2)
-            # Strip any existing ?v= before adding a fresh one
-            url = re.sub(r'\?v=\d+', '', url)
+            url = m.group(2)  # path only, no query string
             return m.group(1) + url + "?v=" + ts + m.group(3)
 
         content = _ASSET_RE.sub(add_version, content)
@@ -78,7 +77,7 @@ class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    with socketserver.TCPServer(("", PORT), NoCacheHandler) as httpd:
+    with http.server.ThreadingHTTPServer(("", PORT), NoCacheHandler) as httpd:
         httpd.allow_reuse_address = True
         print(f"Serving http://localhost:{PORT}  (no-cache + asset versioning)", flush=True)
         httpd.serve_forever()

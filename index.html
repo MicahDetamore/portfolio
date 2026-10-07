@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micah Detamore - Vegan Software Engineer Portfolio</title>
+    <title>Micah Detamore - Software Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,7 +15,6 @@
             _publicKey: 'hAgDXEiIyoIRckFGd',
             init: function(publicKey) {
                 this._publicKey = publicKey;
-                console.log('EmailJS initialized with public key:', publicKey);
             },
             send: function(serviceId, templateId, templateParams) {
                 const url = 'https://api.emailjs.com/api/v1.0/email/send';
@@ -33,7 +34,6 @@
                 });
             }
         };
-        console.log('EmailJS mock loaded');
     </script>
 </head>
 <body>
@@ -63,11 +63,11 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Micah Detamore</span></h1>
-                <p class="hero-subtitle">Senior Software Engineer IV | Full-Stack Developer | Vegan</p>
+                <h1 class="hero-title"><span class="highlight">Micah</span> Detamore</h1>
+                <p class="hero-subtitle">Senior Software Engineer | Full-Stack Developer | Vegan</p>
                 <p class="hero-description">
-                    Dedicated and adaptable full-stack software engineer with over a decade of web development experience.
-                    Skilled in full SDLC, infrastructure migrations, security enhancements, and test-driven development.
+                    Dedicated and adaptable full-stack software engineer with over a decade of web development experience on Agile teams.
+                    Skilled in full SDLC, web development, infrastructure migrations, security enhancements, agentic workflows, DevOps practices, and <a href="#skills" class="link">more</a>.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="about-image">
                     <img
-                        src="https://media.licdn.com/dms/image/v2/D5603AQHRoyZeEE1vNA/profile-displayphoto-scale_400_400/B56ZmBOA0_G4Ak-/0/1758809558817?e=1775088000&v=beta&t=6QHfHAPNna3eF5sUxVg2mcue1_6HyDhMOlw10D0mEeg"
+                        src="img/portrait.png"
                         alt="Micah Detamore"
                         class="about-profile-image"
                     >
@@ -137,8 +137,8 @@
                         <li>Java (Spring Boot, JUnit, Gradle/Maven)</li>
                         <li>JavaScript (React.js, Node.js, TypeScript, Jest)</li>
                         <li>Python (Pandas, Flask)</li>
+                        <li>C# .NET</li>
                         <li>Groovy (Grails)</li>
-                        <li>Perl & PHP</li>
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -166,7 +166,7 @@
                     <ul>
                         <li>Git, GitLab, GitHub, TFS</li>
                         <li>Agile/SCRUM</li>
-                        <li>Test-Driven Development</li>
+                        <li>Agentic AI Workflows</li>
                         <li>Veracode Security Scanning</li>
                         <li>Jira, Artifactory, Nexus</li>
                     </ul>
@@ -212,50 +212,70 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-database"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Infrastructure Migration (MariaDB/Oracle → MySQL/SQL Server)</h3>
+                    <h3>MicahTrade — AI Stock Analytics Platform</h3>
                     <p>
-                        Led architect role in business-critical infrastructure migrations across global production deployments (US, EU, APAC). Successfully migrated from MariaDB to MySQL and Oracle to SQL Server, ensuring zero downtime and seamless data integrity. Achieved significant performance enhancements and improved cost efficiency.
+                        Full-stack AI-powered stock analysis platform featuring real-time market data, technical indicator calculations (RSI, MACD, SMA/EMA), multi-strategy backtesting, and AI-generated analyst consensus ratings via OpenAI. Dark-themed financial dashboard with stock discovery, detailed chart views, and confidence-scored trade recommendations.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">MySQL</span>
-                        <span class="tag">SQL Server</span>
-                        <span class="tag">Database Migration</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">PostgreSQL</span>
                     </div>
-                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-layer-group"></i>
                     </div>
-                    <h3>Okta SSO Integration & Security Automation</h3>
+                    <h3>Universal CMS — Modular Content Management System</h3>
                     <p>
-                        Designed and implemented enterprise Okta Single Sign-On (SSO) integration, streamlining authentication across multiple platforms. Established automated Veracode security scanning to identify and mitigate vulnerabilities in the deployment pipeline. Designated team Security Champion for ongoing threat assessment and compliance.
+                        A flexible, API-driven content management system built for extensibility. Supports dynamic category and table management, full record CRUD, JSON import/export, table lock mode, and custom CSS per table. Architected for future multi-tenant and permissions support with a clean React/Vite frontend and Express/SQLite backend.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Okta</span>
-                        <span class="tag">Veracode</span>
-                        <span class="tag">Security</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Vite</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">TypeScript</span>
                     </div>
-                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header">
-                        <i class="fas fa-flask"></i>
+                        <i class="fas fa-tasks"></i>
                     </div>
-                    <h3>Test-Driven Development Initiative & Mentorship</h3>
+                    <h3>PrioritEyes — Collaborative Priority Voting Board</h3>
                     <p>
-                        Spearheaded comprehensive test-driven development (TDD) initiative, significantly expanding unit, integration, and automated UI test suites. Mentored junior engineers and interns, fostering a culture of quality and best practices. Facilitated SCRUM ceremonies across multiple agile teams and established cross-environment data import/export systems for production deployments.
+                        Team-focused drag-and-drop priority voting application that democratizes task ranking decisions. Features weighted voting by user role, real-time weighted average recalculation, contextual comments per topic, and transparent vote counts. Built with React Beautiful DnD, a TypeScript/Express backend, and SQLite for persistence.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">TDD</span>
-                        <span class="tag">JUnit</span>
-                        <span class="tag">Agile Methodologies</span>
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">SQLite</span>
                     </div>
-                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AiInstructions — AI Agent Governance Framework</h3>
+                    <p>
+                        A versioned, submodule-based ruleset that enforces consistent code quality, security (OWASP Top 10), testing coverage, performance budgets, and architectural standards across all AI-assisted projects. Covers 12 engineering domains — from API design and database schema to CI/CD pipelines and accessibility — providing a single source of truth for every AI agent in the stack.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">AI Governance</span>
+                        <span class="tag">OWASP</span>
+                        <span class="tag">SOLID</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Documentation</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -280,17 +300,10 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+13307053909">+1 (330) 705-3909</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Location</h4>
-                            <p>Kettering, OH 45429</p>
+                            <p>Kettering, OH</p>
                         </div>
                     </div>
                     <div class="contact-item">

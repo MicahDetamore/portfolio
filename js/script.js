@@ -84,14 +84,9 @@ if (navbar) {
    ============================================ */
 
 // Check if EmailJS is loaded
-console.log('EmailJS loaded?', typeof emailjs !== 'undefined');
-
 if (typeof emailjs !== 'undefined') {
     // Initialize EmailJS
     emailjs.init("hAgDXEiIyoIRckFGd");
-    console.log('EmailJS initialized with public key');
-} else {
-    console.error('EmailJS library failed to load - this should not happen!');
 }
 
 const contactForm = document.getElementById('contactForm');
@@ -99,8 +94,6 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        console.log('Contact form submitted');
 
         // Get form values
         const name = document.getElementById('name').value;
@@ -130,19 +123,13 @@ if (contactForm) {
             to_email: 'micah.detamore@gmail.com'
         };
 
-        console.log('Sending email with params:', templateParams);
-        console.log('Service ID: service_elqjh5r');
-        console.log('Template ID: template_7y0uxjl');
-        
         if (typeof emailjs === 'undefined') {
-            console.error('EmailJS is not defined - library not loaded');
             showNotification('Email service not loaded. Please refresh the page.', 'error');
             return;
         }
 
         emailjs.send('service_elqjh5r', 'template_7y0uxjl', templateParams)
             .then(function(response) {
-                console.log('Email sent successfully. Response:', response);
                 if (response.ok || response.status === 200) {
                     // Show success message
                     showNotification('Message sent successfully! I will get back to you soon.', 'success');
@@ -152,11 +139,7 @@ if (contactForm) {
                     throw new Error('Server returned status ' + response.status);
                 }
             })
-            .catch(function(error) {
-                console.error('EmailJS error details:', error);
-                if (error.message) {
-                    console.error('Error message:', error.message);
-                }
+            .catch(function() {
                 showNotification('Failed to send message. Please try again.', 'error');
             });
     });
@@ -182,11 +165,11 @@ function showNotification(message, type) {
         font-weight: 600;
         z-index: 9999;
         animation: slideInRight 0.3s ease;
-        ${type === 'success' ? `
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+${type === 'success' ? `
+            background: var(--primary-color);
             color: white;
         ` : `
-            background: linear-gradient(135deg, #ef4444, #dc2626);
+            background: #ef4444;
             color: white;
         `}
     `;
@@ -230,42 +213,6 @@ document.querySelectorAll('.project-card, .timeline-item, .skill-category, .stat
 });
 
 /* ============================================
-   CURSOR EFFECTS
-   ============================================ */
-
-document.addEventListener('mousemove', (e) => {
-    // Optional: Add cursor glow effect or other mouse-based effects
-    // This is a placeholder for potential enhancements
-});
-
-/* ============================================
-   DARK MODE TOGGLE (Optional)
-   ============================================ */
-
-// Uncomment to add dark mode functionality
-
-/*
-const darkModeToggle = document.querySelector('.dark-mode-toggle');
-const htmlElement = document.documentElement;
-
-// Check for saved dark mode preference
-const darkModePreference = localStorage.getItem('darkMode');
-if (darkModePreference === 'enabled') {
-    htmlElement.setAttribute('data-theme', 'dark');
-}
-
-if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('darkMode', newTheme === 'dark' ? 'enabled' : 'disabled');
-    });
-}
-*/
-
-/* ============================================
    SCROLL TO TOP BUTTON
    ============================================ */
 
@@ -279,7 +226,7 @@ scrollTopBtn.style.cssText = `
     right: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border: none;
     border-radius: 50%;
@@ -341,34 +288,3 @@ if (document.readyState === 'loading') {
 } else {
     document.body.style.opacity = '1';
 }
-
-/* ============================================
-   UTILITY FUNCTIONS
-   ============================================ */
-
-// Debounce function for scroll events
-function debounce(func, delay) {
-    let timeoutId;
-    return function(...args) {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => func(...args), delay);
-    };
-}
-
-// Throttle function for performance
-function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-/* ============================================
-   LOGGER FOR DEBUGGING
-   ============================================ */
-
-console.log('Portfolio website loaded successfully!');

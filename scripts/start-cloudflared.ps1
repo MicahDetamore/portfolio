@@ -52,7 +52,7 @@ if (-not $existing) {
         if ($credMatch.Success) {
             $credentialsFile = $credMatch.Groups[1].Value.Trim()
             if (-not (Test-Path $credentialsFile)) {
-                Write-Host "Credentials file missing — attempting auto-recovery via tunnel token..."
+                    Write-Host "Credentials file missing -- attempting auto-recovery via tunnel token..."
                 # Extract tunnel name/id from config (the 'tunnel:' key)
                 $tunnelMatch = [regex]::Match($configText, '(?m)^tunnel:\s*(.+)$')
                 if (-not $tunnelMatch.Success) { throw "Could not determine tunnel name from $configPath" }
@@ -75,7 +75,7 @@ if (-not $existing) {
         }
     }
 
-    $args = @('tunnel', '--config', $configPath, 'run')
+    $args = @('tunnel', '--config', $configPath, '--edge-ip-version', '4', 'run')
     if ($tunnelToken) {
         $args += @('--token', $tunnelToken)
     }

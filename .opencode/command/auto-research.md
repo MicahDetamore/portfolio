@@ -1,0 +1,1 @@
+/home/quik/Obsidian/AgentWorkbench/commands/auto-research.md
